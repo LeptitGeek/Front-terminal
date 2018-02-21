@@ -1,6 +1,6 @@
-Web-Terminal
+Front-Terminal
 ============
-Web-Terminal is a very lightweight terminal server that provides remote CLI via standard web browser and HTTP protocol.
+Front-Terminal is a very lightweight terminal server that provides remote CLI via standard web browser and HTTP protocol.
 It works on all operating systems supported by Node.js, it doesn't depend on native modules.
 Fast and easy to install. Supports mutiple sessions.
 
@@ -15,22 +15,22 @@ Installation
 
 Install from npm:
 
-    $ npm install web-terminal -g
+    $ npm install front-terminal -g
     
 Usage Examples
 --------------
 
-### Starting web-terminal:
+### Starting front-terminal:
 
-    $ web-terminal --port 8088
+    $ front-terminal --port 8088
 
 Open your favorite web browser, navigate to http://localhost:8088 and start playing with the browser based CLI.
 
-### Integrating web-terminal with web applications:
+### Integrating front-terminal with front applications:
 ```javascript
 
     var http        = require("http"),
-        terminal    = require("web-terminal");
+        terminal    = require("front-terminal");
 
     var app = http.createServer(function (req, res) {
         res.writeHead(200, {"Content-Type": "text/plain"});
@@ -50,7 +50,7 @@ Features
 --------
 
 ### Colors
-Most of the display VT100 escape sequences are translated to HTML. However, Web-terminal doesn't present itself as TTY and 
+Most of the display VT100 escape sequences are translated to HTML. However, Front-terminal doesn't present itself as TTY and 
 therefore most programs won't output escape sequences to **stdout** unless they are explicitly instructed so.
 
 Example configurations:
@@ -71,9 +71,9 @@ NOTE: REPL is executed on the server, not in the brwoser.
 
 Issues
 ------
-Commands that require interaction with TTY cause web-terminal to stop responding.
+Commands that require interaction with TTY cause front-terminal to stop responding.
 
-For instance, commands like sudo that require password from TTY directly cause web-terminal to stop responding. In this case the whole process has to be restarted.
+For instance, commands like sudo that require password from TTY directly cause front-terminal to stop responding. In this case the whole process has to be restarted.
 
 The workaround for the time being is to issue sudo with -S argument to instruct sudo to ask for password on the standard IO. 
 Example: 
@@ -86,31 +86,10 @@ For Git, passwords have to be stored to avoid this problem:
 
 Security Considerations
 -----------------------
-Web-terminal does not provide embedded authentication and encryption mechanisms. 
+Front-terminal does not provide embedded authentication and encryption mechanisms. 
 Therefore, if the service is exposed to the Internet, it is strongly recommended to require TLS with client certificates or VPN connection.
 
-License
+Sources
 -------
 
-(MIT License)
-
-Copyright (c) 2013 Boyan Rabchev <boyan@rabchev.com>. All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This software is based on [Web-terminal](https://github.com/rabchev/web-terminal.git)

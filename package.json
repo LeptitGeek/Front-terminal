@@ -1,39 +1,16 @@
 {
-  "_from": "web-terminal@^0.7.0",
-  "_id": "web-terminal@0.7.0",
-  "_inBundle": false,
-  "_integrity": "sha1-qXZjPaZLVCzfw5rR4XAFY6Z9bMg=",
-  "_location": "/web-terminal",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "web-terminal@^0.7.0",
-    "name": "web-terminal",
-    "escapedName": "web-terminal",
-    "rawSpec": "^0.7.0",
-    "saveSpec": null,
-    "fetchSpec": "^0.7.0"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/web-terminal/-/web-terminal-0.7.0.tgz",
-  "_shasum": "a976633da64b542cdfc39ad1e1700563a67d6cc8",
-  "_spec": "web-terminal@^0.7.0",
-  "_where": "C:\\Users\\letun\\Dev\\GitHub\\Gladys",
-  "author": {
-    "name": "Boyan Rabchev",
-    "email": "boyan@rabchev.com"
-  },
-  "bin": {
-    "web-terminal": "./bin/run.js"
-  },
+  "name": "front-terminal",
+  "version": "0.7.0",
+  "description": "Front-Terminal is a terminal server that provides remote CLI via standard web browser and HTTP protocol.",
+  "author": "Mathieu Andrade",
+  "repository": "https://github.com/LeptitGeek/Front-terminal.git",
   "bugs": {
-    "url": "https://github.com/rabchev/web-terminal/issues",
-    "email": "boyan@rabchev.com"
+    "url": "https://github.com/LeptitGeek/Front-terminal/issues"
   },
-  "bundleDependencies": false,
+  "main": "index",
+  "bin": {
+    "front-terminal": "./bin/run.js"
+  },
   "config": {
     "port": "8088",
     "root": "/terminal",
@@ -42,12 +19,10 @@
     "cert": "",
     "pfx": ""
   },
-  "contributors": [
-    {
-      "name": "Boyan Rabchev",
-      "email": "boyan@rabchev.com"
-    }
-  ],
+  "scripts": {
+    "start": "node ./bin/run.js",
+    "test": "node test"
+  },
   "dependencies": {
     "authenticate-pam": "*",
     "commander": "*",
@@ -57,15 +32,6 @@
     "socket.io": "*",
     "uid-number": "*"
   },
-  "deprecated": false,
-  "description": "Web-Terminal is a terminal server that provides remote CLI via standard web browser and HTTP protocol.",
-  "devDependencies": {
-    "nodeunit": "*"
-  },
-  "engines": {
-    "node": ">=0.10"
-  },
-  "homepage": "https://github.com/rabchev/web-terminal#readme",
   "keywords": [
     "command",
     "shell",
@@ -77,26 +43,7 @@
     "node",
     "TTY",
     "JavaScript",
-    "REPL"
-  ],
-  "license": {
-    "type": "MIT",
-    "url": "http://github.com/rabchev/web-terminal/blob/master/LICENSE"
-  },
-  "main": "index",
-  "name": "web-terminal",
-  "optionalDependencies": {
-    "authenticate-pam": "*",
-    "uid-number": "*"
-  },
-  "preferGlobal": "false",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rabchev/web-terminal.git"
-  },
-  "scripts": {
-    "start": "node ./bin/run.js",
-    "test": "node test"
-  },
-  "version": "0.7.0"
+    "REPL",
+    "front"
+  ]
 }
